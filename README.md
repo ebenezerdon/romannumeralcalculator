@@ -15,7 +15,7 @@ E.g.
 10 + 1 = 11, so "XI" should be your output
 8 + 1 = 9, so "IX" should be your output
 
-For simplicity, you can assume that no negative numbers will be passed in and all inputs we will be passing it for assessment will be valid (we won't be passing in characters or empty strings: a,2,,3)
+Use a limit of 1000. For simplicity, you can assume that no negative numbers will be passed in and all inputs we will be passing it for assessment will be valid (we won't be passing in characters or empty strings: a,2,,3)
 
 ### `npm install && npm start`
 
