@@ -3,11 +3,36 @@ import React, {useState} from 'react';
 export default function RomanNumeralComponent () {
     const [calculatedAnswer, updateAnswer] = useState("Nulla");
     const [input, updateInput] = useState("");
-
+    const baseValues = {
+        M: 1000,
+        CM: 900,
+        D: 500,
+        CD: 400,
+        C: 100,
+        XC: 90,
+        L: 50,
+        XL: 40,
+        X: 10,
+        IX: 9,
+        V: 5,
+        IV: 4,
+        I: 1
+    };
 
     const addAndConvertToRomanNumerals = (ints) => {
-        /* Implement me! */
-        return ints;
+        let sumOfInts = ints.reduce((total, int) => (total + int), 0);
+        let romanNumeral = '';
+
+        if (sumOfInts > 1000) return alert('Sum should not be greater than 1000');
+
+        Object.keys(baseValues).forEach(key => {
+            while(sumOfInts >= baseValues[key]) {
+                romanNumeral += key;
+                sumOfInts -= baseValues[key];
+            }
+        })
+
+        return romanNumeral.length > 0 ? romanNumeral : 'Nulla';
     }
 
     const addNumbers = (inputString) => {
